@@ -14,3 +14,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
+// Volunteer Counter
+
+const volunteersRef = collection(db, "volunteers");
+
+getCountFromServer(volunteersRef)
+.then((snapshot) => {
+
+    const count = snapshot.data().count;
+
+    const counter = document.getElementById("volunteerCount");
+
+    if (counter) {
+        counter.setAttribute("data-target", count);
+        counter.innerHTML = count;
+    }
+
+})
+.catch((error) => {
+    console.log("Error getting volunteer count:", error);
+});
