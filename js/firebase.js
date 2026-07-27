@@ -33,6 +33,7 @@ getCountFromServer(volunteersRef)
 .then((snapshot) => {
 
     const count = snapshot.data().count;
+    console.log("Volunteer count from Firestore:", count);
 
     const counter = document.getElementById("volunteerCount");
 
