@@ -1,6 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
 
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+import { 
+    getFirestore, 
+    collection, 
+    getCountFromServer 
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCr23hGbCdMYpoe2_wb3GGWDVPYI_VMVDk",
@@ -11,12 +16,16 @@ const firebaseConfig = {
     appId: "1:202138992469:web:3630d882dd1c24afea79dc"
 };
 
+
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
+
+
 // Volunteer Counter
 
 const volunteersRef = collection(db, "volunteers");
+
 
 getCountFromServer(volunteersRef)
 .then((snapshot) => {
@@ -32,5 +41,7 @@ getCountFromServer(volunteersRef)
 
 })
 .catch((error) => {
+
     console.log("Error getting volunteer count:", error);
+
 });
