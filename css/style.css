@@ -1100,3 +1100,49 @@ line-height:1.7;
     transform:translateY(0);
 
 }
+/* ================= DEVELOPER POPUP ================= */
+
+.developer-modal {
+    border: none;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.developer-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #198754;
+    margin-bottom: 20px;
+
+    opacity: 0;
+    transform: scale(0.7);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.developer-small {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+.developer-title {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #0d2747;
+}
+
+.developer-subtitle {
+    margin-bottom: 0;
+    color: #555;
+    font-size: 15px;
+}

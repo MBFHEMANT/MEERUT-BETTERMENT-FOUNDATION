@@ -933,7 +933,19 @@ View Dashboard
                 </ul>
 
             </div>
+<div class="text-center mt-4">
 
+    <button
+        type="button"
+        class="btn btn-outline-light"
+        data-bs-toggle="modal"
+        data-bs-target="#developerModal">
+
+        👨‍💻 Know the Developer
+
+    </button>
+
+</div>
 
 
             <div class="col-lg-3 col-md-6">
@@ -1005,6 +1017,61 @@ View Dashboard
 
 </footer>
     <!-- Bootstrap JS -->
+     <audio id="developerSound" preload="auto">
+    <source src="sounds/developer.m4a" type="audio/mp4">
+</audio>
+     <!-- ================= DEVELOPER MODAL ================= -->
+
+<div class="modal fade" id="developerModal" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content developer-modal">
+
+            <div class="modal-header border-0">
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body text-center px-4 pb-5">
+
+                <img
+                    src="images/developer.jpg"
+                    class="developer-photo"
+                    alt="Developer">
+
+                <p class="developer-small">
+                    WEBSITE DEVELOPED BY
+                </p>
+
+                <h2 class="developer-title">
+                    HMT DEVELOPS
+                </h2>
+
+                <p class="developer-subtitle">
+                    Contact if you need a website
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="btn btn-success px-4 mt-3">
+
+                    Contact Developer
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
