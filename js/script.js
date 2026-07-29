@@ -36,45 +36,209 @@ window.addEventListener("scroll", revealOnScroll);
 
 
 revealOnScroll();
-// ================= DEVELOPER REVEAL =================
+// ================= HMT COUNTDOWN + IMPACT REVEAL =================
 
 const developerModal = document.getElementById("developerModal");
+
 const developerSound = document.getElementById("developerSound");
-const developerPhoto = document.querySelector(".developer-photo");
 
-if (developerModal && developerSound && developerPhoto) {
+const developerPhoto =
+    document.querySelector(".developer-photo-wrapper");
 
-    developerModal.addEventListener("shown.bs.modal", function () {
+const countdown =
+    document.querySelector(".hmt-countdown");
 
-        // Hide photo
-        developerPhoto.style.opacity = "0";
-        developerPhoto.style.transform = "scale(0.7)";
+const countdownNumber =
+    document.getElementById("countdownNumber");
 
-        // Start audio
-        developerSound.currentTime = 0;
+const hmtFlash =
+    document.querySelector(".hmt-flash");
+    const screenPulse =
+    document.querySelector(".screenPulse");
 
-        developerSound.play().catch(function (error) {
-            console.log("Audio could not play:", error);
-        });
 
-        // Show photo after exactly 5.3 seconds
-        setTimeout(function () {
+let countdownTimer;
 
-            developerPhoto.style.opacity = "1";
-            developerPhoto.style.transform = "scale(1)";
 
-        }, 5300);
+if (
+    developerModal &&
+    developerSound &&
+    developerPhoto &&
+    countdown &&
+    countdownNumber &&
+    hmtFlash
+) {
 
-    });
+    developerModal.addEventListener(
+        "shown.bs.modal",
+        function () {
 
-    developerModal.addEventListener("hidden.bs.modal", function () {
+            // Reset everything
 
-        developerSound.pause();
-        developerSound.currentTime = 0;
+            clearInterval(countdownTimer);
 
-        developerPhoto.style.opacity = "0";
-        developerPhoto.style.transform = "scale(0.7)";
+            developerPhoto.classList.remove(
+                "hmt-reveal"
+            );
 
-    });
+            developerModal.classList.remove(
+                "hmt-impact"
+            );
+
+            hmtFlash.classList.remove(
+                "hmt-flash-active"
+            );
+screenPulse.classList.remove("active");
+            countdown.style.display = "flex";
+
+            countdownNumber.textContent = "5";
+
+
+            // Start song
+
+            developerSound.currentTime = 0;
+
+            developerSound.play().then(() => {
+
+    // Start first pulse
+    screenPulse.classList.add("active");
+
+}).catch(
+                function (error) {
+
+                    console.log(
+                        "Audio could not play:",
+                        error
+                    );
+
+                }
+            );
+
+
+            // Countdown
+
+            let count = 5;
+
+
+            countdownTimer = setInterval(
+                function () {
+
+                    count--;
+
+
+                    if (count > 0) {
+
+                        countdownNumber.textContent =
+                            count;
+                            // Pulse the whole screen on every count
+
+screenPulse.classList.remove("active");
+
+void screenPulse.offsetWidth;
+
+screenPulse.classList.add("active");
+
+
+                        // Restart number animation
+
+                        countdownNumber.style.animation =
+                            "none";
+
+
+                        void countdownNumber.offsetWidth;
+
+
+                        countdownNumber.style.animation =
+                            "hmtCountdownPulse 0.8s ease-in-out";
+
+
+                    }
+
+                    else {
+
+                        clearInterval(
+                            countdownTimer
+                        );
+
+// Stop pulsing before the final reveal
+
+screenPulse.classList.remove("active");
+                        // Hide countdown
+            
+
+                        countdown.style.display =
+                            "none";
+
+
+                        // Flash
+
+                        hmtFlash.classList.add(
+                            "hmt-flash-active"
+                        );
+
+
+                        // Whole popup impact
+
+                        developerModal.classList.add(
+                            "hmt-impact"
+                        );
+
+
+                        // Crazy photo reveal
+
+                        developerPhoto.classList.add(
+                            "hmt-reveal"
+                        );
+
+                    }
+
+                },
+
+                1000
+
+            );
+
+        }
+    );
+
+
+    developerModal.addEventListener(
+        "hidden.bs.modal",
+        function () {
+
+            clearInterval(
+                countdownTimer
+            );
+
+
+            // Stop audio
+
+            developerSound.pause();
+
+            developerSound.currentTime = 0;
+
+
+            // Reset effects
+
+            developerPhoto.classList.remove(
+                "hmt-reveal"
+            );
+
+            developerModal.classList.remove(
+                "hmt-impact"
+            );
+
+            hmtFlash.classList.remove(
+                "hmt-flash-active"
+            );
+
+            countdown.style.display =
+                "flex";
+
+            countdownNumber.textContent =
+                "5";
+
+        }
+    );
 
 }
