@@ -194,7 +194,7 @@ screenPulse.classList.remove("active");
 
                 },
 
-                1000
+                1160
 
             );
 
