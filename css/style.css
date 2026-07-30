@@ -1592,3 +1592,284 @@ line-height:1.7;
     }
 
 }
+/* =========================================
+   INDEPENDENCE DAY POPUP
+========================================= */
+
+.independence-modal{
+
+    background:linear-gradient(
+        180deg,
+        #ff9933 0%,
+        #ffffff 48%,
+        #138808 100%
+    );
+
+    color:#111;
+
+    border:none;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 60px rgba(0,0,0,.35);
+
+    max-height:90vh;
+
+}
+.independence-modal .modal-body{
+
+    padding:22px 35px;
+
+}
+
+.independence-modal .modal-header{
+
+    position:absolute;
+
+    right:15px;
+
+    top:15px;
+
+    z-index:5;
+
+}
+
+.flag-line{
+
+    font-size:65px;
+
+    animation:flagFloat 2s infinite ease-in-out;
+
+}
+
+.event-tag{
+
+    display:inline-block;
+
+    background:#0d6efd;
+
+    color:white;
+
+    padding:8px 22px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    margin:10px 0 20px;
+
+}
+
+.event-title{
+
+    font-size:2.6rem;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+.big-number{
+
+    margin:12px 0;
+
+}
+
+.big-number span{
+
+    font-size:92px;
+
+    font-weight:900;
+
+    color:#138808;
+
+    text-shadow:
+    0 0 15px rgba(19,136,8,.5);
+
+    display:block;
+
+    line-height:1;
+
+}
+
+.big-number p{
+
+    font-size:32px;
+
+    font-weight:800;
+
+    color:#ff7b00;
+
+    letter-spacing:5px;
+
+}
+
+.event-subtitle{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    margin:12px 0;
+
+}
+
+.event-subtitle span{
+
+    color:#0d6efd;
+
+}
+
+.event-details{
+
+    font-size:1rem;
+
+    margin-top:25px;
+
+}
+
+.event-details p{
+
+    margin:8px;
+
+}
+
+.independence-modal .btn-success{
+
+    padding:12px 34px;
+
+    font-size:1rem;
+
+    border-radius:50px;
+
+}
+
+.independence-modal .btn-outline-light{
+
+    color:#222;
+
+    border:2px solid #222;
+
+    border-radius:50px;
+
+}
+
+.independence-modal hr{
+
+    opacity:.2;
+
+}
+
+@keyframes flagFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.event-title{
+
+    animation:fadeDown .8s ease;
+
+}
+
+.big-number{
+
+    animation:zoomBoom 1s ease;
+
+}
+
+.event-details{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+@keyframes zoomBoom{
+
+0%{
+
+transform:scale(.4);
+
+opacity:0;
+
+}
+
+70%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes fadeDown{
+
+0%{
+
+transform:translateY(-40px);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+transform:translateY(35px);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+}
+.independence-modal hr{
+
+    margin:15px 0;
+
+}

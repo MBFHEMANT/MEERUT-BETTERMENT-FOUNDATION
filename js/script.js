@@ -242,3 +242,19 @@ screenPulse.classList.remove("active");
     );
 
 }
+// ================= EVENT POPUP =================
+
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        const eventPopup =
+            new bootstrap.Modal(
+                document.getElementById("eventModal")
+            );
+
+        eventPopup.show();
+
+    }, 800);
+
+});
